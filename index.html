@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>სანდრო ცეცხლაძე — პორტფოლიო</title>
+  <meta name="description" content="სანდრო ცეცხლაძე — მორიდებული, მაგრამ ნიჭიერი ახალგზდა: Linux, Bash, Git/GitHub, GitHub Pages, WSLg." />
+  <meta name="theme-color" content="#60a5fa" />
+  <meta property="og:title" content="სანდრო ცეცხლაძე — პორტფოლიო" />
+  <meta property="og:description" content="Linux · Bash · Git/GitHub · GitHub Pages · WSLg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avtotrainer.github.io/sandro" />
+
+  <style>
+    :root{
+      /* ფერები — რბილი, მორიდებული ტონი */
+      --bg:#0b1220; --bg2:#0f172a; --ink:#e5e7eb; --muted:#9fb0c0;
+      --card:#0c1426; --border:#1b2744;
+      --brand:#60a5fa; --brand2:#38bdf8; --ring:#93c5fd;
+      --r:18px; --shadow:0 18px 42px rgba(2,6,23,.45); --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--ink);
+      background:
+        radial-gradient(1100px 600px at -10% -20%, #16325b66, transparent 55%),
+        radial-gradient(900px 500px at 120% 0%, #0a3a5a55, transparent 55%),
+        linear-gradient(160deg, var(--bg), var(--bg2));
+      font:16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial;
+    }
+    a{color:#93c5fd; text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+    header{position:sticky; top:0; z-index:10; backdrop-filter:blur(8px); background:#0b1220cc; border-bottom:1px solid var(--border)}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+    .logo{font-weight:900; letter-spacing:.3px}
+    .nav{display:flex; gap:14px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px; cursor:pointer;
+      background:linear-gradient(135deg, var(--brand), #2563eb);
+      color:#081421; border:0; padding:10px 14px; border-radius:12px; font-weight:800; box-shadow:var(--shadow)
+    }
+    .btn.ghost{background:transparent; color:var(--ink); border:1px solid var(--border); box-shadow:none}
+    .chip{
+      display:inline-flex; align-items:center; gap:6px; padding:6px 10px;
+      border-radius:999px; background:#0b2444; color:#dbeafe; font-weight:800; border:1px solid #123a73
+    }
+
+    .hero{padding:52px 0 28px}
+    .hero-wrap{display:grid; grid-template-columns:.95fr 1.05fr; gap:26px; align-items:center}
+    @media (max-width:900px){ .hero-wrap{grid-template-columns:1fr} }
+    .avatar{
+      border-radius:22px; overflow:hidden; border:2px solid #60a5fa; box-shadow:var(--shadow);
+      background:radial-gradient(100% 100% at 50% 0%, #0e1b36, #0b152b);
+      display:grid; place-items:center; aspect-ratio:3/4
+    }
+    .avatar svg{width:88%; height:88%}
+    .card{
+      background:linear-gradient(180deg, #0c1426, #0a1323); border:1px solid var(--border);
+      border-radius:var(--r); padding:22px; box-shadow:var(--shadow)
+    }
+    h1{margin:0 0 8px; font:900 clamp(28px,4.6vw,48px)/1.1 ui-serif, Georgia, serif}
+    .lead{color:var(--muted); font-size:18px; margin:6px 0 12px}
+
+    section{padding:28px 0}
+    section h2{margin:0 0 10px; font:900 clamp(22px,3.3vw,30px)/1.2 ui-serif, Georgia, serif}
+    .grid{display:grid; gap:14px}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){ .cols-3,.cols-2{grid-template-columns:1fr} }
+    .card.sm{padding:16px}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block; padding:4px 10px; border-radius:999px; background:#0b274d; color:#c7d2fe; font-size:12px; border:1px solid #123a73}
+
+    .bar{height:10px; background:#0a2036; border:1px solid #123a73; border-radius:999px; overflow:hidden}
+    .bar > i{display:block; height:100%; background:linear-gradient(90deg, #60a5fa, #38bdf8); width:0}
+
+    pre{margin:10px 0; padding:12px; border-radius:12px; background:#0b1a2f; border:1px solid #163a63; overflow:auto}
+
+    footer{padding:30px 0 44px; color:#9aa6bb; border-top:1px solid var(--border); background:#0a101c}
+    .foot{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center}
+    .sep{height:1px; background:var(--border); margin:12px 0 18px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="მთავარი ნავიგაცია">
+        <div class="logo">🌙 სანდრო ცეცხლაძე <span class="muted">· პორტფოლიო</span></div>
+        <div class="nav">
+          <a href="#about">ჩემ შესახებ</a>
+          <a href="#projects">პროექტები</a>
+          <a href="#skills">უნარები</a>
+          <a href="#timeline">ქრონო</a>
+          <a class="btn ghost" href="mailto:sandro467@din.ge">✉️ წერილი</a>
+          <a class="btn" href="https://avtotrainer.github.io/sandro" target="_blank" rel="noopener">🌐 Live</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-wrap">
+          <!-- ბიჭის პლეისჰოლდერი — სიმარტივე, მორიდებული ტონი -->
+          <figure class="avatar" aria-label="ბიჭის სილუეტი">
+            <svg viewBox="0 0 128 128" role="img" aria-label="ბიჭის სილუეტი">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0" stop-color="#60a5fa"/>
+                  <stop offset="1" stop-color="#38bdf8"/>
+                </linearGradient>
+              </defs>
+              <rect x="6" y="6" width="116" height="116" rx="18" fill="url(#g)" opacity=".16"/>
+              <!-- თავი -->
+              <circle cx="64" cy="46" r="21" fill="#93c5fd"/>
+              <!-- ფრის/თმის რბილი კონტური -->
+              <path d="M44 44c4-9 12-14 20-14s16 5 20 14" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+              <!-- მხრები/ტანი -->
+              <path d="M18 108c8-24 28-36 46-36s38 12 46 36" fill="#60a5fa"/>
+            </svg>
+          </figure>
+
+          <div class="card">
+            <span class="chip">Linux · Bash · Git/GitHub · GitHub Pages · WSLg</span>
+            <h1>გამარჯობა, მე ვარ სანდრო ცეცხლაძე</h1>
+            <p class="lead">
+              მორიდებით, მაგრამ მონდომებით წავიღე საქმეები წინ: პრაქტიკაში <b>Manjaro Linux დავაყენე/განვაახლე</b>,
+              ტერმინალს შევეგუე, Git/GitHub-ით ვმართავ რეპოზიტორებს და GitHub Pages-ზე <b>გამოვაქვეყნე</b> ჩემი საიტები.
+              Windows-ში <b>WSLg ავამუშავე</b>, რომ Linux-ის გრაფიკული აპები გამეშვა.
+            </p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn ghost" href="mailto:sandro467@din.ge">ელ-ფოსტა</a>
+              <a class="btn ghost" href="https://github.com/avtotrainer/niko" target="_blank" rel="noopener">🐙 GitHub</a>
+              <a class="btn" href="https://avtotrainer.github.io/sandro" target="_blank" rel="noopener">🔗 ჩემი საიტი</a>
+            </div>
+            <p class="muted" style="margin-top:8px">(*GitHub ბმული მოწოდებულია ორგანიზატორის მიერ.)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2>ჩემ შესახებ</h2>
+        <div class="card">
+          <p class="muted">
+            მშვიდი ტემპით, ყურადღებით და წესრიგით ვმუშაობ: ნაბიჯ-ნაბიჯ ვაწყობ სისტემებს, ვამოწმებ შედეგებს და ბოლოს
+            ვაქვეყნებ. გუნდში კომუნიკაციას ვმართავ Google Chat/Meet-ით, დოკუმენტაციას — Docs/Sheets/Slides-ით.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <h2>პროექტები</h2>
+        <div class="grid cols-3">
+          <article class="card">
+            <h3 style="margin:0 0 6px">📄 პირადი პორტფოლიო</h3>
+            <span class="badge">HTML/CSS</span> <span class="badge">GitHub Pages</span>
+            <p class="muted">სწრაფი, სუფთა და ხელმისაწვდომი ერთგვერდიანი საიტი.</p>
+            <div style="display:flex; gap:8px; flex-wrap:wrap">
+              <a class="btn ghost" href="https://avtotrainer.github.io/sandro" target="_blank" rel="noopener">Live</a>
+              <a class="btn ghost" href="https://github.com/avtotrainer/niko" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 style="margin:0 0 6px">🔐 კრიპტო-დემო CLI</h3>
+            <span class="badge">Bash</span> <span class="badge">SHA-256</span>
+            <p class="muted">ჰაშით ფაილის კონტროლი ტერმინალიდან.</p>
+<pre><code># hash.sh
+sha256sum &quot;$1&quot; | awk '{print $1}'</code></pre>
+          </article>
+
+          <article class="card">
+            <h3 style="margin:0 0 6px">🤖 ავტო-კომიტი</h3>
+            <span class="badge">Bash</span> <span class="badge">Git</span>
+            <p class="muted">ტაიმსტამპიანი commit + push ერთ ბრძანებაში.</p>
+<pre><code># auto.sh
+git add -A
+git commit -m &quot;update: $(date +%F-%T)&quot;
+git push</code></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <h2>უნარები</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3 style="margin:0 0 6px">ტექნოლოგიები</h3>
+            <p class="muted">Linux (Manjaro/Ubuntu) · Bash · Git/GitHub · GitHub Pages · WSL/WSLg</p>
+            <div>
+              <div class="muted" style="margin:6px 0 4px">Bash</div>
+              <div class="bar"><i style="width:82%"></i></div>
+              <div class="muted" style="margin:10px 0 4px">Git/GitHub</div>
+              <div class="bar"><i style="width:80%"></i></div>
+              <div class="muted" style="margin:10px 0 4px">Linux Basics</div>
+              <div class="bar"><i style="width:85%"></i></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 6px">რბილი უნარები</h3>
+            <p class="muted">მშვიდი კომუნიკაცია · ყურადღება დეტალებზე · კონცენტრირებული შესრულება.</p>
+            <ul class="muted" style="margin:8px 0 0 16px">
+              <li>ინსტრუქციების მიყოლა და სიზუსტე.</li>
+              <li>პრობლემის ეტაპობრივი გაშლა და გადაწყვეტა.</li>
+              <li>კოდის аккуратული სტრუქტურირება.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+      <div class="container">
+        <h2>დროითი ხაზი</h2>
+        <div class="card">
+          <ul class="muted" style="margin:6px 0 0 16px">
+            <li><b>დღე 1:</b> Manjaro Linux — ინსტალაცია/განახლება, GNOME.</li>
+            <li><b>დღე 2:</b> ტერმინალის საბაზო ბრძანებები, ფაილური სტრუქტურა.</li>
+            <li><b>დღე 3:</b> Git/GitHub, SSH გასაღებები, commit/push.</li>
+            <li><b>დღე 4:</b> GitHub Pages — საიტის აგება და <b>გამოქვეყნება</b>.</li>
+            <li><b>დღე 5:</b> WSL/WSLg — კონფიგურაცია და GUI აპები.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h2>კონტაქტი</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <p class="muted">რაღაცის შეტყობინება გაქვს? დაწერე.</p>
+            <p>✉️ <a href="mailto:sandro467@din.ge">sandro467@din.ge</a></p>
+            <p>🐙 <a href="https://github.com/avtotrainer/niko" target="_blank" rel="noopener">github.com/avtotrainer/niko</a></p>
+            <p>🔗 <a href="https://avtotrainer.github.io/sandro" target="_blank" rel="noopener">avtotrainer.github.io/sandro</a></p>
+          </div>
+          <div class="card" style="display:grid; grid-template-columns:120px 1fr; gap:12px; align-items:center">
+            <img
+              alt="QR — avtotrainer.github.io/sandro"
+              width="120" height="120"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&ecc=H&data=https%3A%2F%2Favtotrainer.github.io%2Fsandro">
+            <p class="muted">სკანირებით გადადი ჩემს Live გვერდზე. (თუ QR არ ჩნდება, ინტერნეტი შეამოწმე.)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="sep"></div>
+      <div class="foot">
+        <span>© <span id="y"></span> სანდრო ცეცხლაძე</span>
+        <span class="muted">განახლდა: <span id="lm"></span></span>
+        <span class="muted">საიტი: <a href="https://avtotrainer.github.io/sandro" target="_blank" rel="noopener">sandro</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('lm').textContent = new Date(document.lastModified).toLocaleDateString('ka-GE');
+  </script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"სანდრო ცეცხლაძე",
+    "email":"mailto:sandro467@din.ge",
+    "url":"https://avtotrainer.github.io/sandro",
+    "sameAs":["https://github.com/avtotrainer/niko"]
+  }
+  </script>
+</body>
+</html>
